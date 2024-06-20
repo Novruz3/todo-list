@@ -17,12 +17,12 @@ export interface IAuthErrorResponce {
 }
 
 export interface IUserState {
-  isUser: boolean;
   isFetched: boolean;
   listUuid: string;
   isFetchedTasks: boolean;
   isFetchedAllTasks: boolean;
   username: string;
+  darkMode : boolean | undefined
 }
 
 export interface IRootState {

@@ -45,7 +45,6 @@ const Task = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (isFetchedAllTasks) {
       const getAllTasks = async () => {
         setLoading(true);
         try {
@@ -59,8 +58,7 @@ const Task = () => {
         }
       };
       getAllTasks();
-    }
-  }, [isFetchedAllTasks]);
+    }, [isFetchedAllTasks]);
 
   useEffect(() => {
     if (!isFetchedTasks) {
@@ -107,7 +105,7 @@ const Task = () => {
   };
   return (
     <>
-      <div className="flex justify-center mt-2 font-bold text-2xl">
+      <div className="flex justify-center mt-2 font-bold text-2xl dark:text-white">
         {username}
       </div>
       {loading ? (
@@ -135,8 +133,8 @@ const Task = () => {
       ) : (
         <>
           <div className="relative overflow-x-auto shadow-md sm:rounded-lg my-8">
-            <table className="w-full text-sm text-left rtl:text-right text-gray-500 ">
-              <thead className="text-xs text-gray-700 uppercase bg-gray-50 ">
+            <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+              <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-800 dark:text-gray-400">
                 <tr>
                   <th scope="col" className="px-6 py-3">
                     Task name
@@ -155,10 +153,10 @@ const Task = () => {
               {tasks.map((task: ITask) => {
                 return (
                   <tbody key={task.uuid}>
-                    <tr className="bg-white border-b hover:bg-gray-50 ">
+                    <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 ">
                       <th
                         scope="row"
-                        className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
+                        className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-gray-200"
                       >
                         {task.text}
                       </th>

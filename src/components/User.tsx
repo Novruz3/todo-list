@@ -86,8 +86,8 @@ const User = () => {
   };
   return (
     <>
-      <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 mt-4 gap-2">
-        <li className="me-2 px-4 py-3 border border-black rounded-lg flex items-center gap-2">
+      <ul className=" dark:text-white flex flex-wrap text-sm font-medium text-center text-gray-500 mt-4 gap-2">
+        <li className="me-2 px-4 py-3 border border-black dark:border-white rounded-lg flex items-center gap-2">
           <div
             className="flex hover:text-gray-900 items-center mr-2 gap-1 cursor-pointer"
             onClick={getAllTasks}
@@ -97,7 +97,7 @@ const User = () => {
         </li>
         {posts.map((user: IUser) => (
           <li
-            className="me-2 px-4 py-3 border border-black rounded-lg flex items-center gap-2"
+            className="me-2 px-4 py-3 border border-black rounded-lg flex items-center gap-2 dark:border-white"
             key={user.uuid}
             ref={userRef}
           >

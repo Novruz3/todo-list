@@ -6,7 +6,7 @@ import { IRootState } from "../types/types";
 const Tasks = () => {
   const username = useSelector((state: IRootState) => state.user.username);
   return (
-    <div className="bg-white mt-4 py-2 px-8 rounded-md">
+    <div className="bg-white mt-4 py-2 px-8 rounded-md dark:bg-slate-700">
       <div className={`${username === "All tasks" ? "hidden" : "flex"}`}>
         <AddTask />
       </div>

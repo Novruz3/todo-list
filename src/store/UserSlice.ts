@@ -2,24 +2,18 @@ import { createSlice } from "@reduxjs/toolkit";
 import { IUserState } from "../types/types";
 
 const initialState: IUserState = {
-  isUser: false,
   isFetched: false,
   listUuid: "",
   isFetchedTasks: true,
   isFetchedAllTasks: true,
   username: "",
+  darkMode : false
 };
 
 export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    setUser(state) {
-      state.isUser = true;
-    },
-    removeUser(state) {
-      state.isUser = false;
-    },
     setIsFetched(state) {
       state.isFetched = !state.isFetched;
     },
@@ -35,6 +29,12 @@ export const userSlice = createSlice({
     setUsername(state, action) {
       state.username = action.payload;
     },
+    switchMode(state){
+      state.darkMode = !state.darkMode
+    },
+    setDarkMode(state, action){
+      state.darkMode = action.payload
+    }
   },
 });
 

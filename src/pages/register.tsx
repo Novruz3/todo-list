@@ -40,9 +40,9 @@ const SignUp = () => {
     }
   };
   return (
-    <div className="flex items-center justify-center w-full h-screen">
-      <div className=" w-96 h-96 bg-blue-300 rounded-xl p-4">
-        <p className="flex justify-center text-2xl">Sign Up</p>
+    <div className="flex items-center justify-center w-full h-screen dark:bg-slate-800">
+      <div className=" w-96 h-96 bg-blue-300 rounded-xl p-4 dark:bg-slate-600">
+        <p className="flex justify-center text-2xl dark:text-white">Sign Up</p>
         <form
           ref={formRef}
           className="mt-8 flex flex-col gap-4 items-center justify-center my-auto"

@@ -14,7 +14,6 @@ const SignIn = () => {
   });
   const [showPass, setShowPass] = useState<boolean>(true);
   const formRef = useRef<HTMLFormElement>(null);
-  const dispatch = useDispatch();
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
@@ -23,9 +22,9 @@ const SignIn = () => {
         password: formData.password,
       });
       console.log(await res.data.token);
-      localStorage.setItem("token", res.data.token);
-      dispatch(userAction.setUser());
+      localStorage.setItem("token",await res.data.token);
       navigate("/");
+      location.reload()
     } catch ({ response }: IAuthErrorResponce | any) {
       if (response.data.status === "fail") {
         alert("Username or password wrong");
@@ -34,9 +33,9 @@ const SignIn = () => {
     // formRef.current!.reset();
   };
   return (
-    <div className="flex items-center justify-center w-full h-screen">
-      <div className=" w-96 h-96 bg-blue-300 rounded-xl p-4">
-        <p className="flex justify-center text-2xl">Login</p>
+    <div className="flex items-center justify-center w-full h-screen dark:bg-slate-800">
+      <div className=" w-96 h-96 bg-blue-300 rounded-xl p-4 dark:bg-slate-600">
+        <p className="flex justify-center text-2xl dark:text-white">Login</p>
         <form
           ref={formRef}
           className="mt-16 flex flex-col gap-4 items-center justify-center my-auto"
